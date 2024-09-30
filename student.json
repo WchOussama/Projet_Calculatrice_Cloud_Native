@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "esirem",
+  "private_key_id": "db63f403d6bb2639813d1461e3d461ae36a255a5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCc6x1nAoQcUIBF\nmwIjkAB9nVrbXYU0STVAoctRJUzWDLGBnZbowXeYO9RbXMlKrXIymfmWQUxzinQX\n78e/UOhU025MCuN8yW5YzQPATTawxLWHyVUmsqFUABo3IhC8RvvJq40WEUXkCglK\ne3Ct07n30r/OFGkix1vI6JKLYLDSDiCTBhaSb/0y1Oxnt29DkayNuxKviRPS1i8x\nOYdVVvFEDw81B/eOfyLWsLzqTqaFJvnBBiH2F28gChmYo2wDORNIrMoWSdZgZYRn\nOVgAhjqLBKlPgFUqokHJ+jKWZHXhvszuWBoA6GqmlS75JV5RNmp/oeDR7uHvvJfd\nq7PuTHstAgMBAAECggEACHZ7rvcJRfene1mJS360MBIg+My55uB94T74lqdC1hZ4\nKkvj/CiW+Rxc7xJ5frANBSKdvddGtsKEUVgqtyw3Y3/Fpo89xpicfWiNJ71iUjVB\nrxGSKJSgs8WPpGKPcYAIi09XvBVxZgOOjbhLkuxkzrNMieI661fCIPs+EAtGbgWk\nVM1kdUY5SJrb43pwtKtDDwGneUR3GPq7/mfmOoRWn4dcvP+K7OL75sAphRSWlifh\n4V3f4hABOBoPB/wf56YcF+hZNMIHWUHIblOlm/T31ArLfKtLernwAYUXPsjgxTeE\nsxa5d2X0FmPYczuMRWfL8HW7c2UhS0boPD0u12l1cQKBgQDaIe+vkxYFmjTMyGv2\nVfwlNP+cVD6Z1ZuHEskRtGTUEQEyNZLE1Ee8oqo1TYMDKKKlntAZxtcIIpOMbiBE\n80bproAvQwwK8oNwGYrTWHlhURSEmMa5XuB/wMBX2qtlbFyFxf7Eub26D/QnQhfu\nvxV72LAd5bLrZGJJI5/kwwhKlQKBgQC4KMBD90x0ed58PAHVxiYd1Z7atmkyN1RM\naer/3YcXFrxJ+i+1SSAOZwLHscrBw4yegAY19tZrHF6/t+Hcg1xA2cViphnl/W19\nychzzyf9HTYJAydBVKdN+McSVN1rbCDYMFJW+J+XUnEqjDX+6TgxcwAb2zUkG96+\nLytrLIxgOQKBgQDN/L4bTwq8v6Kcv6c0OH6jpCi9t9Bl9RGpvFOkJHYSzPwULgMr\nXEtiFzokm83cbcMqI47gyKTHSd+L/XL7qcCNa/wgpW/55om4kmZGroXxIF//10XS\nR4Y5HgyE6jpwzKOSsCamH8DKs8YcTI3NJyVijn3Bvef34hPufXXA0WxDAQKBgDA5\nq6+gsQrHZzXNWQWsMAscB89qeT3HM3IXQozibB/lukT9GUU18wkSfK3ipx/6n3Za\nPEYhb6D4+u7lrmXamGv7Gy9sI9gQd327O5zoIKat4ZqWks8O5gkLHsZ0Js+crzUt\n4kIYNWKhGjV0Jies1yRL4zloPBBKpBfVrl8QeWoxAoGADtxZgg2MIZqDHHwjdOrr\nvTGMSlBBaSy/pF9NfNv1xnfyIsAdgGVvsJ66mo1XKnaBjfq7R4aJV8yUTBRULtjh\nEwZHSHEDr3h1M+3MIATqa5rGcSWUI75dbXAeLHYQW8aP2VW3HMcBnZpfuqr5Rh9u\n7ReDIMHivfS5mxqY0kfx4Mg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "student@esirem.iam.gserviceaccount.com",
+  "client_id": "109119516631903869208",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/student%40esirem.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
