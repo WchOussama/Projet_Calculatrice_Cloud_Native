@@ -8,9 +8,9 @@ terraform {
 }
 
 provider "scaleway" {
-    project_id = var.project_id
-    region     = var.region
-    zone       = var.zone
+  project_id = var.project_id
+  region     = var.region
+  zone       = var.zone
 }
 
 # Bloc local pour les variables locales
@@ -19,10 +19,10 @@ locals {
 
   environment_specs = {
     for env in local.environments : env => {
-      db_name  = "db-${env}"
+      db_name           = "db-${env}"
       loadbalancer_name = "lb-${env}"
-      dev_dns_name  = "calculatrice-dev-${var.nombinome1}-${var.nombinome2}-polytech-dijon"
-      prod_dns_name  = "calculatrice-${var.nombinome1}-${var.nombinome2}-polytech-dijon"
+      dev_dns_name      = "calculatrice-dev-${var.nombinome1}-${var.nombinome2}-polytech-dijon"
+      prod_dns_name     = "calculatrice-${var.nombinome1}-${var.nombinome2}-polytech-dijon"
     }
   }
 }
@@ -37,10 +37,10 @@ resource "scaleway_registry_namespace" "container_registry" {
 }
 
 resource "scaleway_k8s_cluster" "cluster" {
-  name                   = "tf-cluster"
-  version                = "1.29.1"
-  cni                    = "cilium"
-  private_network_id     = scaleway_vpc_private_network.pn.id
+  name                        = "tf-cluster"
+  version                     = "1.29.1"
+  cni                         = "cilium"
+  private_network_id          = scaleway_vpc_private_network.pn.id
   delete_additional_resources = false
 }
 
@@ -53,16 +53,16 @@ resource "scaleway_k8s_pool" "pool" {
 
 # Bases de données
 resource "scaleway_rdb_instance" "db" {
-  for_each   = local.environment_specs
-  name       = each.value.db_name
-  engine     = "PostgreSQL-13"
-  node_type  = each.key == "dev" ? "DB-DEV-S" : "DB-PRO-S"
+  for_each    = local.environment_specs
+  name        = each.value.db_name
+  engine      = "PostgreSQL-13"
+  node_type   = each.key == "dev" ? "DB-DEV-S" : "DB-PRO-S"
   volume_type = each.key == "dev" ? "bssd" : "lssd"
 }
 
 # LoadBalancers
 resource "scaleway_lb" "loadbalancer" {
-  type      = "lb-bc1-s"
+  type       = "lb-bc1-s"
   for_each   = local.environment_specs
   name       = each.value.loadbalancer_name
   project_id = var.project_id
