@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: backend-rs
+  namespace: wachofi-ouali
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+        soft: python
+    spec:
+      containers:
+      - name: backend
+        image: europe-west1-docker.pkg.dev/polytech-dijon/polytech-dijon/api-image-2024-v3.2:Wachofi-Ouali
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "4m"
+            memory: "32Mi"
