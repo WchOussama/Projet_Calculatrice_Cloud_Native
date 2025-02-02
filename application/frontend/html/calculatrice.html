@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            transition: background 0.5s ease;
+        }
+
+        .calculator-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 320px;
+            width: 100%;
+            text-align: center;
+            transition: background 0.5s ease;
+        }
+
+        .theme-switcher {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .display {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 2rem;
+            text-align: right;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.25);
+            border: none;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .operator {
+            background: #f7b731;
+            color: white;
+        }
+
+        .operator:hover {
+            background: #f39c12;
+        }
+
+        .equals {
+            background: #eb3b5a;
+            color: white;
+        }
+
+        .equals:hover {
+            background: #d63031;
+        }
+
+        .clear {
+            background: #20bf6b;
+            color: white;
+        }
+
+        .clear:hover {
+            background: #0fb96b;
+        }
+
+        /* Dark Theme Styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #232526, #414345);
+        }
+
+        .dark-mode .calculator-container {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark-mode .display {
+            background: #333;
+            color: #fff;
+        }
+
+        .dark-mode .btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .dark-mode .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .dark-mode .operator {
+            background: #9b59b6;
+        }
+
+        .dark-mode .equals {
+            background: #e74c3c;
+        }
+
+        .dark-mode .clear {
+            background: #16a085;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator-container">
+        <div class="theme-switcher">
+            <span class="theme-name">🌍 Smart Calculator</span>
+            <button class="theme-button" onclick="switchTheme()">✨ Switch Theme</button>
+        </div>
+
+        <div class="display" id="display">0</div>
+
+        <div class="button-grid">
+            <button class="btn clear" onclick="clearDisplay()">AC</button>
+            <button class="btn operator" onclick="appendOperator('/')">÷</button>
+            <button class="btn operator" onclick="appendOperator('*')">×</button>
+            <button class="btn operator" onclick="appendOperator('-')">−</button>
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operator" onclick="appendOperator('+')">+</button>
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+            <button class="btn equals" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        function switchTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').innerText = '0';
+        }
+
+        function appendNumber(num) {
+            const display = document.getElementById('display');
+            if (display.innerText === '0') {
+                display.innerText = num;
+            } else {
+                display.innerText += num;
+            }
+        }
+
+        function appendOperator(operator) {
+            const display = document.getElementById('display');
+            display.innerText += operator;
+        }
+
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                display.innerText = eval(display.innerText);
+            } catch {
+                display.innerText = 'Error';
+            }
+        }
+    </script>
+</body>
+
+</html>
