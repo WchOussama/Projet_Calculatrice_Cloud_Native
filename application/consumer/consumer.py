@@ -12,7 +12,7 @@ def main():
     # Connect to RabbitMQ
     connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq-service'))
     channel = connection.channel()
-    channel.queue_declare(queue='calcul')
+    channel.queue_declare(queue='calculations')
 
     def callback(ch, method, properties, body):
         """ Retrieves a calculation from RabbitMQ, executes it, and stores the result in Redis """
@@ -44,7 +44,7 @@ def main():
             print(f" [⚠] Error processing message: {str(e)}")
 
     # Start consuming messages from the queue
-    channel.basic_consume(queue='calcul', on_message_callback=callback, auto_ack=True)
+    channel.basic_consume(queue='calculations', on_message_callback=callback, auto_ack=True)
 
     print(" [*] Waiting for messages. Press CTRL+C to exit.")
     try:
