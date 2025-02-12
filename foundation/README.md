@@ -1,4 +1,49 @@
-## Résultat de `terraform plan`
+# 📦 Infrastructure Cloud Native avec Terraform
+
+Ce dossier contient la configuration **Terraform** permettant de déployer les **fondations de l'application Cloud Native Calculator**. L'infrastructure repose sur **Scaleway** et inclut :  
+- 🌐 **Un réseau privé (VPC)** pour une isolation sécurisée.  
+- ☸️ **Un cluster Kubernetes** pour orchestrer les conteneurs.  
+- ⚖️ **Des Load Balancers** pour gérer la répartition du trafic.  
+- 💾 **Des bases de données PostgreSQL** pour stocker les données.  
+- 🗂️ **Un registre de conteneurs** pour stocker et distribuer les images Docker.  
+
+---
+
+## 🛠️ **Architecture de l’Infrastructure**
+
+```plaintext
++-------------------------+
+|        VPC Privée       | (scaleway_vpc_private_network.pn)
++-------------------------+
+          |
++------------------+       +------------------+       +------------------+
+|   Base de Données|       |  Load Balancer   |       |   DNS Record     |
+|  (RDB Instance)  |       | (scaleway_lb)    |       | (scaleway_domain |
+|   - db-dev       |       |  - lb-dev        |       |    _record)      |
+|   - db-prod      |       |  - lb-prod       |       |                  |
++------------------+       +------------------+       +------------------+
+
+          |
++-------------------------+
+|      Cluster K8s        | (scaleway_k8s_cluster.cluster)
+|                         |
+|  + Pool de nœuds       | (scaleway_k8s_pool.pool)
+|    - 3 instances        |
++-------------------------+
+
+          |
++-------------------------+
+| Registre de Conteneurs  | (scaleway_registry_namespace.container_registry)
++-------------------------+
+```
+
+---
+
+
+
+
+
+## 🚀 **Résultat de `terraform plan`**
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
 following symbols:
   + create
