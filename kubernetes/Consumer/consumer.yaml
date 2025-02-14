@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: consumer
-        image: europe-west1-docker.pkg.dev/polytech-dijon/polytech-dijon/consumer-image:latest
+        image: europe-west1-docker.pkg.dev/polytech-dijon/polytech-dijon/consumer-2024:wachofi-ouali
         ports:
         - containerPort: 8080
         resources:
