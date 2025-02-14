@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: europe-west1-docker.pkg.dev/polytech-dijon/polytech-dijon/rabbitmq-2024:wachofi-ouali
+          ports:
+            - containerPort: 5672
+            - containerPort: 15672
