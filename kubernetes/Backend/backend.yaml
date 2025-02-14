@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: europe-west1-docker.pkg.dev/polytech-dijon/polytech-dijon/api-image-2024-v3.2:Wachofi-Ouali
+        image: europe-west1-docker.pkg.dev/polytech-dijon/polytech-dijon/backend-2024:wachofi-ouali
         ports:
         - containerPort: 5000
         resources:
