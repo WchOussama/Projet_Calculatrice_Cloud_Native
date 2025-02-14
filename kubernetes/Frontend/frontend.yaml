@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: europe-west1-docker.pkg.dev/polytech-dijon/polytech-dijon/front-image:latest
+        image: europe-west1-docker.pkg.dev/polytech-dijon/polytech-dijon/frontend-2024:wachofi-ouali
         ports:
         - containerPort: 80
         resources:
